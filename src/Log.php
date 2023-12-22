@@ -105,7 +105,7 @@ class Log extends \Monolog\Logger
         foreach ($context as $key => $value) {
             $data['embeds'][0]['fields'][] = [
                 'name' => $key,
-                'value' => print_r($value, true),
+                'value' => substr(print_r($value, true), 0, 1024),
                 'inline' => true,
             ];
         }
