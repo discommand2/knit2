@@ -23,7 +23,6 @@ class Callback
     public function callback(RabbitMessage $message, Channel $channel): bool
     {
         $this->log->debug('received message', ['message' => $message]);
-        $this->log->info('Callback::callback()');
         $content = json_decode($message->content, true);
         $this->route($content ?? []) or throw new Error('failed to route message');
         $channel->ack($message);
