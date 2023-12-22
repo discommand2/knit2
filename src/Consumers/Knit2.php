@@ -42,10 +42,11 @@ class Knit2
         return true;
     }
 
-    public function init(): void
+    public function init(): bool
     {
         $this->log->debug('Knit2::init()');
         $this->mq->consume(self::QUEUE, $this->callback->callback(...)) or throw new Error('failed to consume');
         $this->log->info('Knit2 is ready!');
+        return true;
     }
 }
