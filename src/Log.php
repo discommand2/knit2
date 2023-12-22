@@ -109,7 +109,6 @@ class Log extends \Monolog\Logger
                 'inline' => true,
             ];
         }
-        print_r($data);
         HTTPS::post($url, ["Content-Type: application/json"], json_encode($data));
     }
 
