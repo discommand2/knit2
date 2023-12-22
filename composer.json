@@ -19,7 +19,8 @@
     ],
     "require": {
         "bunny/bunny": "@dev",
-        "monolog/monolog": "^3.5"
+        "monolog/monolog": "^3.5",
+        "react/async": "^4.2"
     },
     "config": {}
 }
