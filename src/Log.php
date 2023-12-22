@@ -33,46 +33,55 @@ class Log extends \Monolog\Logger
 
     public function debug(string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook('debug', $message, $context);
         parent::debug($message, $context);
     }
 
     public function info(string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook('info', $message, $context);
         parent::info($message, $context);
     }
 
     public function notice(string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook('notice', $message, $context);
         parent::notice($message, $context);
     }
 
     public function warning(string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook('warning', $message, $context);
         parent::warning($message, $context);
     }
 
     public function error(string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook('error', $message, $context);
         parent::error($message, $context);
     }
 
     public function critical(string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook('critical', $message, $context);
         parent::critical($message, $context);
     }
 
     public function alert(string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook('alert', $message, $context);
         parent::alert($message, $context);
     }
 
     public function emergency(string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook('emergency', $message, $context);
         parent::emergency($message, $context);
     }
 
     public function log($level, string|\Stringable $message, array $context = []): void
     {
+        $this->sendWebhook($level, $message, $context);
         parent::log($level, $message, $context);
     }
 
