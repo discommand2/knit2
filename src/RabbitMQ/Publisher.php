@@ -31,10 +31,6 @@ class Publisher
         $result = false;
         try {
             $exchange = '';
-            if ($queue === self::BROADCAST_QUEUE) {
-                $exchange = self::BROADCAST_QUEUE;
-                $queue = '';
-            } else $this->queueDeclare($queue);
             $result = $this->channel->publish(json_encode($data), [], $exchange, $queue) or throw new Error('Failed to publish the message');
         } catch (\Throwable $e) {
             $this->log->error($e->getMessage(), ['trace' => $e->getTrace()]);
