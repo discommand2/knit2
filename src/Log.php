@@ -109,8 +109,8 @@ class Log extends \Monolog\Logger
                 'inline' => true,
             ];
         }
-        $data = json_encode($data);
-        HTTPS::post($url, ["Content-Type: application/json"], $data);
+        print_r($data);
+        HTTPS::post($url, ["Content-Type: application/json"], json_encode($data));
     }
 
     private function getColor($level): string
