@@ -1,0 +1,13 @@
+[Unit]
+Description=knit2 Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/var/www/knit2/scripts/knit2.php
+Restart=on-failure
+RestartSec=5
+
+[Install]
