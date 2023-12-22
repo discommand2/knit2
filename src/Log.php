@@ -95,7 +95,6 @@ class Log extends \Monolog\Logger
         if (!$this->levelCompare($level, $webHook['level'])) return;
         $url = $webHook['path'];
         $data = [
-            'username' => $this->myName,
             'embeds' => [
                 [
                     'title' => $level . ': ' . $message,
