@@ -117,23 +117,23 @@ class Log extends \Monolog\Logger
     {
         switch ($level) {
             case 'debug':
-                return '#00ff00';
+                return 0x00ff00;
             case 'info':
-                return '#0000ff';
+                return 0x0000ff;
             case 'notice':
-                return '#0000ff';
+                return 0x0000ff;
             case 'warning':
-                return '#ffff00';
+                return 0xffff00;
             case 'error':
-                return '#ff0000';
+                return 0xff0000;
             case 'critical':
-                return '#ff0000';
+                return 0xff0000;
             case 'alert':
-                return '#ff0000';
+                return 0xff0000;
             case 'emergency':
-                return '#ff0000';
+                return 0xff0000;
             default:
-                return '#ffffff';
+                return 0x777777;
         }
     }
 }
