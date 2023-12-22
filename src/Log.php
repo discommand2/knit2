@@ -16,7 +16,7 @@ class Log extends \Monolog\Logger
         $this->webHooks[] = $config;
     }
 
-    private function levelCompare($level1, $level2): bool
+    private function levelCompare(string $level1, string $level2): bool
     {
         $levels = [
             'debug' => 100,
@@ -28,7 +28,7 @@ class Log extends \Monolog\Logger
             'alert' => 550,
             'emergency' => 600,
         ];
-        return $levels[$level1] >= $levels[$level2];
+        return $levels[strtolower($level1)] >= $levels[strtolower($level2)];
     }
 
     public function debug(string|\Stringable $message, array $context = []): void
