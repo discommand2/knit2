@@ -1,0 +1,14 @@
+[
+    {
+        "path": "php://stdout",
+        "level": "DEBUG"
+    },
+    {
+        "path": "https://discord.webhook.url/abc/123",
+        "level": "INFO"
+    },
+    {
+        "path": "logs/error.log",
+        "level": "ERROR"
+    }
+]
