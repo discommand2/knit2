@@ -1,5 +1,25 @@
 {
     "wdir": "/home/example/working/directory",
+    "dependencies": [
+        "mysql",
+        "rabbitmq-server"
+    ],
+    "config": {
+        "config/mysql.json": {
+            "host": "127.0.0.1",
+            "username": "example",
+            "password": "example",
+            "database": "example"
+        },
+        "config/rabbitmq.json": {
+            "host": "127.0.0.1",
+            "port": 5672,
+            "vhost": "example",
+            "username": "example",
+            "password": "example",
+            "heartbeat": 1000
+        }
+    },
     "pre": [
         "systemctl stop example.service",
         "git fetch --all",
@@ -21,6 +41,9 @@
     "post": [
         "chown -R example:example .",
         "systemctl start example.service"
+    ],
+    "cleanup": [
+        "rm -rf /tmp/example-app/*"
     ],
     "notify": [
         "https://discord.webhook.url/abc/123"
