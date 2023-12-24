@@ -4,7 +4,7 @@
         "mysql",
         "rabbitmq-server"
     ],
-    "config": {
+    "configs": {
         "config/mysql.json": {
             "host": "127.0.0.1",
             "username": "example",
