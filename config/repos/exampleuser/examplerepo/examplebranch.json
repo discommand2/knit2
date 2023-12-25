@@ -23,22 +23,21 @@
         "systemctl stop example.service",
         "git fetch --all",
         "git reset --hard origin/master",
-        "git clean -f -d",
-        "rm -rf vendor"
+        "git clean -f -d"
     ],
     "pull": [
         "git pull",
-        "composer install --no-dev --optimize-autoloader --no-interaction --allow-root"
+        "export COMPOSER_ALLOW_SUPERUSER=1 && composer install --no-dev --optimize-autoloader --no-interaction",
+        "chown -R example:example ."
     ],
     "test": [
         "phpunit --configuration phpunit.xml --coverage-text --colors=never"
     ],
     "rollback": [
         "git reset --hard HEAD~1",
-        "composer install --no-dev --optimize-autoloader --no-interaction --allow-root"
+        "export COMPOSER_ALLOW_SUPERUSER=1 && composer install --no-dev --optimize-autoloader --no-interaction"
     ],
     "post": [
-        "chown -R example:example .",
         "systemctl start example.service"
     ],
     "cleanup": [
