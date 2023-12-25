@@ -1,8 +1,7 @@
 {
     "wdir": "/home/example/working/directory",
     "dependencies": [
-        "mysql",
-        "rabbitmq-server"
+        "systemctl is-active mysql rabbitmq-server --quiet"
     ],
     "configs": {
         "config/mysql.json": {
